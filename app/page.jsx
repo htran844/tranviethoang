@@ -1,9 +1,11 @@
+import Header from "@components/Header";
+import TinhTHPT from "@components/TinhTHPT";
 import Link from "next/link";
 
 const Home = () => {
   return (
     <div>
-      <div>
+      {/* <div>
         <Link href="/taixiu">
           <button
             type="button"
@@ -49,7 +51,8 @@ const Home = () => {
         >
           Red to Yellow
         </button>
-      </div>
+      </div> */}
+      <TinhTHPT></TinhTHPT>
     </div>
   );
 };
