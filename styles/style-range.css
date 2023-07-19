@@ -1,7 +1,14 @@
  /* Range Slider as a Single Thumb Slider */
- .single-thumb .range-slider__thumb[data-lower] {
+ .single-thumb .range-slider__thumb[data-upper] {
   width: 0;
 }
 .single-thumb .range-slider__range {
   border-radius: 6px;
+}
+.reverse {
+  -webkit-transform: rotateY(180deg);
+   -moz-transform: rotateY(180deg);
+   -ms-transform: rotateY(180deg);
+   -o-transform: rotateY(180deg);
+   transform: rotateY(180deg);
 }

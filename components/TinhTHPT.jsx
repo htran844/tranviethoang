@@ -23,7 +23,8 @@ const TinhTHPT = () => {
         let p_anh = anh * 2.5
         let p_van = van
         let p_damme = damme * 1.5
-        let total = p_toan + p_ly + p_hoa + p_anh + p_van + p_damme
+        let total = Number(p_toan + p_ly + p_hoa + p_anh + p_van + p_damme)
+        console.log("total", total)
         if (toan < 5) {
             total = total - 20
             listLoiKhuyen.push("Toán dốt thế này không học được đâu em ơi")
@@ -138,104 +139,108 @@ const TinhTHPT = () => {
         setPoint(total.toFixed(2))
     }
     return (
-        <div>
+        <div className='relative'>
             <div className='text-white bg-gradient-to-br from-purple-600 to-blue-500 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2'>Tính độ phù hợp với ngành IT </div>
-            <div className='flex flex-row justify-center items-center my-4'>
-                <div className='w-2/5'>Toán: {toan}</div>
-                <RangeSlider
-                    className="single-thumb w-2/3"
-                    defaultValue={[0, 0]}
-                    thumbsDisabled={[true, false]}
-                    rangeSlideDisabled={true}
-                    step={0.2}
-                    min={0}
-                    max={10}
-                    onInput={(value) => {
-                        setToan(value[1])
-                    }}
-                />
+            <div className='flex flex-row justify-center items-center h-64 '>
+                <div className='flex flex-col-reverse justify-center items-center h-64 my-4 w-14'>
+                    <div className='w-2/5 h-10'>Toán: {toan}</div>
+                    <RangeSlider
+                        orientation={"vertical"}
+                        className="single-thumb w-3/5 reverse"
+                        defaultValue={[10, 10]}
+                        thumbsDisabled={[false, true]}
+                        rangeSlideDisabled={true}
+                        step={0.2}
+                        min={0}
+                        max={10}
+                        onInput={(value) => {
+                            setToan(Number((10 - value[0]).toFixed(1)))
+                        }}
+                    />
+                </div>
+                <div className='flex flex-col-reverse justify-center items-center h-64 my-4 w-14'>
+                    <div className='w-2/5 h-10'>Lý: {ly}</div>
+                    <RangeSlider
+                        orientation={"vertical"}
+                        className="single-thumb w-3/5 reverse"
+                        defaultValue={[10, 10]}
+                        thumbsDisabled={[false, true]}
+                        rangeSlideDisabled={true}
+                        step={0.25}
+                        min={0}
+                        max={10}
+                        onInput={(value) => {
+                            setLy(Number((10 - value[0]).toFixed(1)))
+                        }}
+                    />
+                </div>
+                <div className='flex flex-col-reverse justify-center items-center h-64 my-4 w-14'>
+                    <div className='w-2/5 h-10'>Hoá: {hoa}</div>
+                    <RangeSlider
+                        orientation={"vertical"}
+                        className="single-thumb w-3/5 reverse"
+                        defaultValue={[10, 10]} thumbsDisabled={[false, true]}
+                        rangeSlideDisabled={true}
+                        step={0.25}
+                        min={0}
+                        max={10}
+                        onInput={(value) => {
+                            setHoa(Number((10 - value[0]).toFixed(1)))
+                        }}
+                    />
+                </div>
+                <div className='flex flex-col-reverse justify-center items-center h-64 my-4 w-14'>
+                    <div className='w-2/5 h-10'>Anh: {anh}</div>
+                    <RangeSlider
+                        orientation={"vertical"}
+                        className="single-thumb w-3/5 reverse"
+                        defaultValue={[10, 10]} thumbsDisabled={[false, true]}
+                        rangeSlideDisabled={true}
+                        step={0.25}
+                        min={0}
+                        max={10}
+                        onInput={(value) => {
+                            setAnh(Number((10 - value[0]).toFixed(1)))
+                        }}
+                    />
+                </div>
+                <div className='flex flex-col-reverse justify-center items-center h-64 my-4 w-14'>
+                    <div className='w-2/5 h-10'>Văn: {van}</div>
+                    <RangeSlider
+                        orientation={"vertical"}
+                        className="single-thumb w-3/5 reverse"
+                        defaultValue={[10, 10]}                       // value={[0, toan]}
+                        thumbsDisabled={[false, true]}
+                        rangeSlideDisabled={true}
+                        step={0.2}
+                        min={0}
+                        max={10}
+                        onInput={(value) => {
+                            setVan(Number((10 - value[0]).toFixed(1)))
+                        }}
+                    />
+                </div>
+                <div className='flex flex-col-reverse justify-center items-center h-64 my-4 w-14'>
+                    <div className='w-2/5 h-10'>Đam mê: {damme}</div>
+                    <RangeSlider
+                        orientation={"vertical"}
+                        className="single-thumb w-3/5 reverse"
+                        defaultValue={[10, 10]} thumbsDisabled={[false, true]}
+                        rangeSlideDisabled={true}
+                        step={0.1}
+                        min={0}
+                        max={10}
+                        onInput={(value) => {
+                            setDamme(Number((10 - value[0]).toFixed(1)))
+                        }}
+                    />
+                </div>
             </div>
-            <div className='flex flex-row justify-center items-center my-4'>
-                <div className='w-2/5'>Lý: {ly}</div>
-                <RangeSlider
-                    className="single-thumb w-3/5"
-                    defaultValue={[0, 0]}
-                    thumbsDisabled={[true, false]}
-                    rangeSlideDisabled={true}
-                    step={0.25}
-                    min={0}
-                    max={10}
-                    onInput={(value) => {
-                        setLy(value[1])
-                    }}
-                />
-            </div>
-            <div className='flex flex-row justify-center items-center my-4'>
-                <div className='w-2/5'>Hoá: {hoa}</div>
-                <RangeSlider
-                    className="single-thumb w-3/5"
-                    defaultValue={[0, 0]}
-                    thumbsDisabled={[true, false]}
-                    rangeSlideDisabled={true}
-                    step={0.25}
-                    min={0}
-                    max={10}
-                    onInput={(value) => {
-                        setHoa(value[1])
-                    }}
-                />
-            </div>
-            <div className='flex flex-row justify-center items-center my-4'>
-                <div className='w-2/5'>Anh: {anh}</div>
-                <RangeSlider
-                    className="single-thumb w-3/5"
-                    defaultValue={[0, 0]}
-                    thumbsDisabled={[true, false]}
-                    rangeSlideDisabled={true}
-                    step={0.25}
-                    min={0}
-                    max={10}
-                    onInput={(value) => {
-                        setAnh(value[1])
-                    }}
-                />
-            </div>
-            <div className='flex flex-row justify-center items-center my-4'>
-                <div className='w-2/5'>Văn: {van}</div>
-                <RangeSlider
-                    className="single-thumb w-3/5"
-                    defaultValue={[0, 0]}
-                    // value={[0, toan]}
-                    thumbsDisabled={[true, false]}
-                    rangeSlideDisabled={true}
-                    step={0.2}
-                    min={0}
-                    max={10}
-                    onInput={(value) => {
-                        setVan(value[1])
-                    }}
-                />
-            </div>
-            <div className='flex flex-row justify-center items-center my-4'>
-                <div className='w-2/5'>Đam mê: {damme}</div>
-                <RangeSlider
-                    className="single-thumb w-3/5"
-                    defaultValue={[0, 0]}
-                    thumbsDisabled={[true, false]}
-                    rangeSlideDisabled={true}
-                    step={0.1}
-                    min={0}
-                    max={10}
-                    onInput={(value) => {
-                        setDamme(value[1])
-                    }}
-                />
-            </div>
-
-            <div>
-                <div className='flex flex-col justify-center items-center'>
+            <div className='h-10'></div>
+            <div className='h-74'>
+                <div className='flex flex-col justify-center items-center h-64'>
                     <button
-                        className="my-4 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
+                        className="my-4 w-19 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
                         onClick={() => { handleKiemtra() }}
                     >
                         Kiểm tra
@@ -244,15 +249,15 @@ const TinhTHPT = () => {
                         <CircularProgressbar value={point} text={`${point}%`} />
 
                     </div>
-                    <div className='flex flex-col items-start'>
-                        {loiKhuyen.length > 0 && loiKhuyen.map((value, index)=>(
-                        <div key={index}>👉 {value}</div>
-                    ))}
+                    <div className='flex flex-col items-start h-56'>
+                        {loiKhuyen.length > 0 && loiKhuyen.map((value, index) => (
+                            <div key={index}>👉 {value}</div>
+                        ))}
                     </div>
-                    
-                    
 
-                    
+
+
+
 
                 </div>
             </div>
