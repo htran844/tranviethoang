@@ -170,7 +170,7 @@ const TinhTHPT = () => {
                         min={0}
                         max={10}
                         onInput={(value) => {
-                            setLy(Number((10 - value[0]).toFixed(1)))
+                            setLy(Number((10 - value[0]).toFixed(2)))
                         }}
                     />
                 </div>
@@ -185,7 +185,7 @@ const TinhTHPT = () => {
                         min={0}
                         max={10}
                         onInput={(value) => {
-                            setHoa(Number((10 - value[0]).toFixed(1)))
+                            setHoa(Number((10 - value[0]).toFixed(2)))
                         }}
                     />
                 </div>
@@ -196,7 +196,7 @@ const TinhTHPT = () => {
                         className="single-thumb w-3/5 reverse"
                         defaultValue={[10, 10]} thumbsDisabled={[false, true]}
                         rangeSlideDisabled={true}
-                        step={0.25}
+                        step={0.2}
                         min={0}
                         max={10}
                         onInput={(value) => {
@@ -212,11 +212,11 @@ const TinhTHPT = () => {
                         defaultValue={[10, 10]}                       // value={[0, toan]}
                         thumbsDisabled={[false, true]}
                         rangeSlideDisabled={true}
-                        step={0.2}
+                        step={0.25}
                         min={0}
                         max={10}
                         onInput={(value) => {
-                            setVan(Number((10 - value[0]).toFixed(1)))
+                            setVan(Number((10 - value[0]).toFixed(2)))
                         }}
                     />
                 </div>
