@@ -6,7 +6,7 @@ function PhongHoc() {
     <div>
       <div className="flex flex-col justify-between items-center mr-4">
         <div>
-          Học React Native từ đầu hoặc bổ sung kiến thức trước khi xin intern/fresher bằng việc học 1-1 với mình. Liên hệ qua FB:
+          Học React Native từ đầu hoặc bổ sung kiến thức trước khi xin intern/fresher bằng việc học 1-1 với mình. Nhắn cho mình qua FB (Nhớ nhắn trước khi gửi kết bạn nha^^):
         </div>
         <div>
           <a href="https://www.facebook.com/h7844/" className="text-blue-600">Việt Hoàng</a>
